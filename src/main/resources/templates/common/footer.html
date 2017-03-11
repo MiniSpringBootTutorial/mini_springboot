@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+
+<div th:fragment="footer">
+
+    <div class="footer">Springboot极简教程, Jason Chen, 2017</div>
+
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+
+    <script src="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+
+    <script src="../../static/js/jquery.dataTables.min.js"
+            th:src="@{js/jquery.dataTables.min.js}"></script>
+
+    <script src="../../static/js/mini_springboot.js" th:src="@{js/mini_springboot.js}"></script>
+
+</div>
+
+
+</body>
+</html>

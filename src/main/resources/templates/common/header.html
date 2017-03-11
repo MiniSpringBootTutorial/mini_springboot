@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:fragment="head">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+
+    <link href="../../static/css/jquery.dataTables.min.css"
+          th:href="@{css/jquery.dataTables.min.css}" rel="stylesheet" media="screen"/>
+
+    <link href="../../static/css/mini_springboot.css"
+          th:href="@{css/mini_springboot.css}" rel="stylesheet" media="screen"/>
+
+    <title>Mini SpringBoot Tutorial</title>
+</head>
+
+<body>
+
+<div th:fragment="header">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" th:href="@{/customers.do}">Customers</a></li>
+                    <li><a href="#" th:href="@{/customer/new}">Create Customer</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="row text-center">
+            <div class="">
+                <h1 class="center">Springboot极简教程</h1>
+                <h2>Mini SpringBoot Tutorial</h2>
+                <h3>Spring Boot Kotlin Thymeleaf Web App</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <iframe class="iframe" src="https://jason-chen-2017.github.io/Jason-Chen-2017/"></iframe>
+
+            <!--<img src="../../static/images/home.png" width="80%" th:src="@{/images/home.png}"/>-->
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
