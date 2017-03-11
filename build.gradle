@@ -1,0 +1,63 @@
+version = "0.0.1-SNAPSHOT"
+
+buildscript {
+
+    ext{
+        springBootVersion = "1.5.2.RELEASE"
+        kotlinVersion = "1.1.0"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+        classpath("org.jetbrains.kotlin:kotlin-noarg:$kotlinVersion")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+    }
+}
+
+apply {
+    plugin("kotlin")
+    plugin("kotlin-spring")
+    plugin("kotlin-jpa")
+    plugin("org.springframework.boot")
+    plugin 'java'
+    plugin 'eclipse'
+    plugin 'idea'
+//    plugin: 'spring-boot'
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = 'mini_springboot'
+    version = '0.0.1'
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+//    compile("com.h2database:h2")
+    compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+    compile("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.8.4")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile("org.springframework.boot:spring-boot-starter-jetty")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile('mysql:mysql-connector-java:5.1.13')
+
+    testCompile("junit:junit")
+}
+
