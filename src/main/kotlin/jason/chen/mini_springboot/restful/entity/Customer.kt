@@ -17,6 +17,6 @@ class Customer(
         @Id @GeneratedValue(strategy = GenerationType.AUTO)
         val id: Long = -1) {
     override fun toString(): String {
-        return "Customer(id=$id, firstName='$firstName', lastName='$lastName')"
+        return "Customer(firstName='$firstName', lastName='$lastName', gmtCreated=$gmtCreated, gmtModified=$gmtModified, isDeleted=$isDeleted, deletedDate=$deletedDate, id=$id)"
     }
 }

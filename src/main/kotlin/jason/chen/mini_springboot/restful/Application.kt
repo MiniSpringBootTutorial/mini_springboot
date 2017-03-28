@@ -1,6 +1,6 @@
 package jason.chen.mini_springboot.restful
 
-import jason.chen.mini_springboot.restful.biz.CustomerRepository
+import jason.chen.mini_springboot.restful.biz.CustomerService
 import jason.chen.mini_springboot.restful.entity.Customer
 import org.slf4j.LoggerFactory
 import org.springframework.boot.CommandLineRunner
@@ -15,7 +15,7 @@ class Application {
     private val log = LoggerFactory.getLogger(Application::class.java)
 
     @Bean
-    fun init(repository: CustomerRepository) = CommandLineRunner {
+    fun init(repository: CustomerService) = CommandLineRunner {
         // save a couple of customers
         val now = Date();
         repository.save(Customer("Jason", "Chen", now, now, 0, now))

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:include="common/header :: head"></th:block>
+
+<body>
+<th:block th:include="common/header :: header"></th:block>
+
+<div th:if="${not #lists.isEmpty(customers)}">
+    <h2>Customer List</h2>
+    <table id="customersTable" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Created Time</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}"><a href="/product/${product.id}">Id</a></td>
+            <td th:text="${customer.firstName}">FirstName</td>
+            <td th:text="${customer.lastName}">LastName</td>
+            <td th:text="${customer.gmtCreated}">gmtCreated</td>
+            <!--<td><a th:href="${ '/product/' + product.id}">View</a></td>-->
+            <!--<td><a th:href="${'/product/edit/' + product.id}">Edit</a></td>-->
+        </tr>
+        </tbody>
+
+    </table>
+
+</div>
+
+<th:block th:include="common/footer :: footer"></th:block>
+
+</body>
+</html>
